@@ -50,8 +50,30 @@
                 roundResults = "That wasn't one of the options I gave you. Try again.";
             }
 
-            console.log(roundResults);
+            // console.log(roundResults);
             return roundResults;
+        }
+
+        function game() {
+            let playerSelection;
+            let computerSelection;
+            let playerWins = 0;
+            let computerWins = 0;
+
+            while (playerWins < 3 && computerWins < 3) {
+                playerSelection = prompt("Enter 'rock', 'paper', or 'scissors'.");
+                computerSelection = computerPlay();
+                roundResults = playRound(playerSelection, computerSelection);
+
+                if (roundResults == 'WIN') {
+                    playerWins++;
+                } else if (roundResults == 'LOSE') {
+                    computerWins++;
+                }
+
+                console.log(roundResults);
+                alert("Computer chose " + computerSelection + ". You " + roundResults + ".");
+            }
         }
     </script>
 </html>
