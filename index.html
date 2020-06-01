@@ -60,7 +60,8 @@
             let playerWins = 0;
             let computerWins = 0;
 
-            while (playerWins < 3 && computerWins < 3) {
+            // repeats the process of playing the game as 2 out of 3 and giving the results for each round
+            while (playerWins < 2 && computerWins < 2) {
                 playerSelection = prompt("Enter 'rock', 'paper', or 'scissors'.");
                 computerSelection = computerPlay();
                 roundResults = playRound(playerSelection, computerSelection);
@@ -72,7 +73,14 @@
                 }
 
                 console.log(roundResults);
-                alert("Computer chose " + computerSelection + ". You " + roundResults + ".");
+                alert("Computer chose " + computerSelection + ". " + roundResults);
+            }
+
+            // reports a winner or loser at the end of the game
+            if (playerWins > computerWins) {
+                alert("Congratulations! You beat the computer, 2 out of 3!");
+            } else {
+                alert("Too bad. The computer beat you, 2 out of 3.");
             }
         }
     </script>
