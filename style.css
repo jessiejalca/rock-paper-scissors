@@ -30,12 +30,9 @@ h2 {
     justify-content: center;
 }
 
-.button {
+img.button {
     padding: 2em;
     margin: auto;
-}
-
-img.button {
     width: 15rem;
     height: auto;
 }
