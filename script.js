@@ -1,3 +1,13 @@
+const choices = Array.from(document.querySelectorAll('img.button'));
+choices.forEach(choice => choice.addEventListener('click', game));
+
+const userScore = document.querySelector('#user-score');
+const computerScore = document.querySelector('#cpu-score');
+
+let playerWins = 0;
+let computerWins = 0;
+
+
 // Generating computer's play
 function computerPlay() {
     const randNum = Math.random();
@@ -49,40 +59,41 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // Playing a full match
-function game() {
+function game(e) {
     let playerSelection;
     let computerSelection;
-    let playerWins = 0;
-    let computerWins = 0;
 
     let lineBreak = "\r\n";
 
-    // repeats the process of playing the game as 2 out of 3 and giving the results for each round
-    while (playerWins < 2 && computerWins < 2) {
-        // gets each side's play and the results
-        playerSelection = prompt("Enter 'rock', 'paper', or 'scissors'.");
-        computerSelection = computerPlay();
-        roundResults = playRound(playerSelection, computerSelection);
+    // gets each side's play and the results
+    playerSelection = e.target.id;
+    computerSelection = computerPlay();
+    roundResults = playRound(playerSelection, computerSelection);
 
-        // counts the results of each round
-        if (roundResults == 'WIN') {
-            playerWins++;
-        } else if (roundResults == 'LOSE') {
-            computerWins++;
-        }
+    // counts the results of each round
+    if (roundResults == 'WIN') {
+        playerWins++;
 
-        // reports the results at the end of each round
-        console.log(roundResults);
-        alert(
-            "Computer: " + computerSelection + lineBreak + // computer's play
-            "User: " + playerSelection + lineBreak + // user's play
-            roundResults); // round result
+        userScore.classList.add('content');
+        userScore.textContent = 'You: ' + playerWins;
+    } else if (roundResults == 'LOSE') {
+        computerWins++;
+
+        computerScore.classList.add('content');
+        computerScore.textContent = 'CPU: ' + computerWins;
     }
+
+    // reports the results at the end of each round
+    console.log(roundResults);
+    alert(
+        "Computer: " + computerSelection + lineBreak + // computer's play
+        "User: " + playerSelection + lineBreak + // user's play
+        roundResults); // round result
 
     // reports a winner or loser at the end of the game
-    if (playerWins > computerWins) {
-        alert("Congratulations! You beat the computer, 2 out of 3!");
-    } else {
-        alert("Too bad. The computer beat you, 2 out of 3.");
-    }
+    // if (playerWins > computerWins) {
+    //     alert("Congratulations! You beat the computer, 2 out of 3!");
+    // } else {
+    //     alert("Too bad. The computer beat you, 2 out of 3.");
+    // }
 }

@@ -37,17 +37,17 @@ img.button {
     height: auto;
 }
 
-.rock:hover {
+#rock:hover {
     transform: scale(1.25) rotate(20deg);
     filter: drop-shadow(0 0 1rem rgba(254, 43, 241, 0.3));
 }
 
-.paper:hover {
+#paper:hover {
     transform: scale(1.25) rotate(-10deg);
     filter: drop-shadow(0 0 1rem rgba(7, 223, 168, 0.3));
 }
 
-.scissors:hover {
+#scissors:hover {
     transform: scale(1.25) rotate(-20deg);
     filter: drop-shadow(0 0 1rem rgba(11, 123, 236, 0.3));
 }
