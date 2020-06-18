@@ -2,16 +2,20 @@ html {
     width: 100%;
     height: 100%;
     margin: auto;
-    /* font-family: 'Wendy One', sans-serif; */
     font-family: 'VT323', monospace;
+    color: #678fb2;
+    background-image: linear-gradient(to bottom right, #581877, #04075e);
 }
 
 header, h2 {
     text-align: center;
+    color: #b7ddff;
 }
 
 h1 {
     font-size: 5rem;
+    color: #0b7bec;
+    filter: drop-shadow(0 0 1rem blue);
 }
 
 h2 {
@@ -36,6 +40,21 @@ img.button {
     height: auto;
 }
 
+.rock:hover {
+    transform: scale(1.25) rotate(20deg);
+    filter: drop-shadow(0 0 1rem rgba(254, 43, 241, 0.3));
+}
+
+.paper:hover {
+    transform: scale(1.25) rotate(-10deg);
+    filter: drop-shadow(0 0 1rem rgba(7, 223, 168, 0.3));
+}
+
+.scissors:hover {
+    transform: scale(1.25) rotate(-20deg);
+    filter: drop-shadow(0 0 1rem rgba(11, 123, 236, 0.3));
+}
+
 .scoreboard {
     margin: auto;
     width: 50rem;
@@ -51,4 +70,16 @@ img.button {
 #restart {
     display: block;
     margin: auto;
+    height: 3rem;
+    width: 10rem;
+    background-color: #96aaf3;
+    border: none;
+    border-radius: 2rem;
+    color: #04075e;
+    font-size: 1.5rem;
+}
+
+#restart:hover {
+    filter: drop-shadow(0 0 1rem #4146c9);
+    color: rgba(4, 7, 94, 0.75);
 }
