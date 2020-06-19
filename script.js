@@ -1,8 +1,11 @@
 const choices = Array.from(document.querySelectorAll('img.button'));
 choices.forEach(choice => choice.addEventListener('click', game));
 
-const userScore = document.querySelector('#user-score');
+const playerScore = document.querySelector('#user-score');
 const computerScore = document.querySelector('#cpu-score');
+
+const btnRestart = document.querySelector('#restart');
+btnRestart.addEventListener('click', reset);
 
 let playerWins = 0;
 let computerWins = 0;
@@ -74,8 +77,8 @@ function game(e) {
     if (roundResults == 'WIN') {
         playerWins++;
 
-        userScore.classList.add('content');
-        userScore.textContent = 'You: ' + playerWins;
+        playerScore.classList.add('content');
+        playerScore.textContent = 'You: ' + playerWins;
     } else if (roundResults == 'LOSE') {
         computerWins++;
 
@@ -85,10 +88,10 @@ function game(e) {
 
     // reports the results at the end of each round
     console.log(roundResults);
-    alert(
-        "Computer: " + computerSelection + lineBreak + // computer's play
-        "User: " + playerSelection + lineBreak + // user's play
-        roundResults); // round result
+    // alert(
+    //     "Computer: " + computerSelection + lineBreak + // computer's play
+    //     "User: " + playerSelection + lineBreak + // user's play
+    //     roundResults); // round result
 
     // reports a winner or loser at the end of the game
     // if (playerWins > computerWins) {
@@ -96,4 +99,21 @@ function game(e) {
     // } else {
     //     alert("Too bad. The computer beat you, 2 out of 3.");
     // }
+
+    if (playerWins >= 5 || computerWins >= 5) reset();
+}
+
+function endGame() {
+    
+}
+
+function reset() {
+    playerWins = 0;
+    computerWins = 0;
+
+    playerScore.classList.add('content');
+    playerScore.textContent = 'You: ' + playerWins;
+
+    computerScore.classList.add('content');
+    computerScore.textContent = 'CPU: ' + computerWins;
 }
