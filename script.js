@@ -96,6 +96,18 @@ function game(e) {
         computerScore.classList.add('winning');
         computerScore.classList.add('content');
         computerScore.textContent = 'CPU: ' + computerWins;
+    } else {
+        computerScore.classList.remove('winning');
+        computerScore.classList.add('tie');
+        computerScore.addEventListener( 'animationend',  function() {
+            computerScore.classList.remove('tie');    
+        } );
+
+        playerScore.classList.remove('winning');
+        playerScore.classList.add('tie');
+        playerScore.addEventListener( 'animationend',  function() {
+            playerScore.classList.remove('tie');    
+        } );
     }
 
     // reports the results at the end of each round

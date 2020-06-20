@@ -88,6 +88,19 @@ img.button {
     filter: drop-shadow(0 0 .1rem #b7ddff);
 }
 
+.tie {
+    animation-name: blink;
+    animation-duration: 650ms;
+}
+
+@keyframes blink {
+    0% {color: #678fb2; filter: none;}
+    25% {color: #b7ddff; filter: drop-shadow(0 0 .1rem #b7ddff);}
+    50% {color: #678fb2; filter: none;}
+    75% {color: #b7ddff; filter: drop-shadow(0 0 .1rem #b7ddff);}
+    100% {color: #678fb2; filter: none;}
+}
+
 #restart {
     display: block;
     margin: auto;
