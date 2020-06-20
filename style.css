@@ -10,6 +10,7 @@ html {
 header, h2 {
     text-align: center;
     color: #b7ddff;
+    margin: 0;
 }
 
 h1 {
@@ -25,7 +26,7 @@ h2 {
 .weapons {
     display: block;
     margin: auto;
-    width: 75rem;
+    width: 60rem;
     display: flex;
     justify-content: center;
 }
@@ -33,7 +34,7 @@ h2 {
 img.button {
     padding: 2em;
     margin: auto;
-    width: 15rem;
+    width: 13rem;
     height: auto;
 }
 
@@ -52,8 +53,22 @@ img.button {
     filter: drop-shadow(0 0 1rem rgba(11, 123, 236, 0.3));
 }
 
-.hide-image {
-    visibility: hidden;
+#computer {
+    width: 5rem;
+    height: auto;
+}
+
+.spin {
+    animation-name: spin;
+    animation-duration: 1s;
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(360deg);}
+    50% {transform: rotate(360deg);}
+    75% {transform: rotate(360deg);}
+    100% {transform: rotate(360deg);}
 }
 
 .scoreboard {

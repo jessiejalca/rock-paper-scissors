@@ -1,6 +1,8 @@
 const choices = Array.from(document.querySelectorAll('img.button'));
 choices.forEach(choice => choice.addEventListener('click', game));
 
+const computer = document.querySelector('#computer');
+
 const playerScore = document.querySelector('#user-score');
 const computerScore = document.querySelector('#cpu-score');
 
@@ -24,8 +26,14 @@ function computerPlay() {
     } else {
         computerSelection = 'scissors';
     }
+
+    // shows the computer's play
+    computer.classList.add('spin');
+    computer.addEventListener( 'animationend',  function() {
+        computer.classList.remove('spin');    
+    } );
+    computer.src = `images/${computerSelection}.png`;
     
-    // console.log(computerSelection);
     return computerSelection;
 }
 
@@ -73,8 +81,6 @@ function game(e) {
     computerSelection = computerPlay();
     roundResults = playRound(playerSelection, computerSelection);
 
-    hideImages(playerSelection);
-
     // counts the results of each round
     if (roundResults == 'WIN') {
         playerWins++;
@@ -105,14 +111,6 @@ function game(e) {
     if (playerWins >= 5 || computerWins >= 5) restart();
 }
 
-function hideImages(playerSelection) {
-    for (i=0; i < choices.length; i++) {
-        if (playerSelection != choices[i].id) {
-            choices[i].classList.toggle('hide-image');
-        }
-    }
-}
-
 function endGame() {
     
 }
@@ -127,4 +125,6 @@ function restart() {
 
     computerScore.classList.add('content');
     computerScore.textContent = 'CPU: ' + computerWins;
+
+    computer.src = `images/neutral.png`;
 }
