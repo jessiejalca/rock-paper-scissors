@@ -5,7 +5,7 @@ const playerScore = document.querySelector('#user-score');
 const computerScore = document.querySelector('#cpu-score');
 
 const btnRestart = document.querySelector('#restart');
-btnRestart.addEventListener('click', reset);
+btnRestart.addEventListener('click', restart);
 
 let playerWins = 0;
 let computerWins = 0;
@@ -100,14 +100,14 @@ function game(e) {
     //     alert("Too bad. The computer beat you, 2 out of 3.");
     // }
 
-    if (playerWins >= 5 || computerWins >= 5) reset();
+    if (playerWins >= 5 || computerWins >= 5) restart();
 }
 
 function endGame() {
     
 }
 
-function reset() {
+function restart() {
     playerWins = 0;
     computerWins = 0;
 
