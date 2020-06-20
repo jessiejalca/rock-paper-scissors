@@ -126,5 +126,9 @@ function restart() {
     computerScore.classList.add('content');
     computerScore.textContent = 'CPU: ' + computerWins;
 
+    computer.classList.add('spin');
+    computer.addEventListener( 'animationend',  function() {
+        computer.classList.remove('spin');    
+    } );
     computer.src = `images/neutral.png`;
 }

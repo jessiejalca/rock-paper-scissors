@@ -88,14 +88,15 @@ img.button {
     margin: auto;
     height: 3rem;
     width: 10rem;
-    background-color: #96aaf3;
+    background-color: rgba(11, 123, 236, 0);
     border: none;
-    border-radius: 2rem;
-    color: #04075e;
-    font-size: 1.5rem;
+    color: #678fb2;
+    font-family: 'VT323', monospace;
+    font-size: 3rem;
 }
 
 #restart:hover {
-    filter: drop-shadow(0 0 1rem #4146c9);
-    color: rgba(4, 7, 94, 0.75);
+    filter: drop-shadow(0 0 1rem blue);
+    color: #b7ddff;
+    font-size: 3.2rem;
 }
