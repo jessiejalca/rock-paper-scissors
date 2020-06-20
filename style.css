@@ -52,6 +52,10 @@ img.button {
     filter: drop-shadow(0 0 1rem rgba(11, 123, 236, 0.3));
 }
 
+.hide-image {
+    visibility: hidden;
+}
+
 .scoreboard {
     margin: auto;
     width: 50rem;

@@ -73,6 +73,8 @@ function game(e) {
     computerSelection = computerPlay();
     roundResults = playRound(playerSelection, computerSelection);
 
+    hideImages(playerSelection);
+
     // counts the results of each round
     if (roundResults == 'WIN') {
         playerWins++;
@@ -103,10 +105,19 @@ function game(e) {
     if (playerWins >= 5 || computerWins >= 5) restart();
 }
 
+function hideImages(playerSelection) {
+    for (i=0; i < choices.length; i++) {
+        if (playerSelection != choices[i].id) {
+            choices[i].classList.toggle('hide-image');
+        }
+    }
+}
+
 function endGame() {
     
 }
 
+// Resetting the board
 function restart() {
     playerWins = 0;
     computerWins = 0;
