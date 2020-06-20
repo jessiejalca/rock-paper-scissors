@@ -48,7 +48,7 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection == 'paper' && computerSelection == 'paper') ||
     (playerSelection == 'scissors' && computerSelection == 'scissors')
     ) {
-        roundResults = "DRAW";
+        roundResults = "TIE";
     } else if (
     (playerSelection == 'rock' && computerSelection == 'scissors') ||
     (playerSelection == 'paper' && computerSelection == 'rock') ||
@@ -109,20 +109,6 @@ function game(e) {
             playerScore.classList.remove('tie');    
         } );
     }
-
-    // reports the results at the end of each round
-    console.log(roundResults);
-    // alert(
-    //     "Computer: " + computerSelection + lineBreak + // computer's play
-    //     "User: " + playerSelection + lineBreak + // user's play
-    //     roundResults); // round result
-
-    // reports a winner or loser at the end of the game
-    // if (playerWins > computerWins) {
-    //     alert("Congratulations! You beat the computer, 2 out of 3!");
-    // } else {
-    //     alert("Too bad. The computer beat you, 2 out of 3.");
-    // }
 
     if (playerWins >= 5 || computerWins >= 5) restart();
 }
