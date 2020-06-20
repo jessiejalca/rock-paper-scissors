@@ -83,6 +83,11 @@ img.button {
     font-size: 3rem;
 }
 
+.winning {
+    color: #b7ddff;
+    filter: drop-shadow(0 0 .1rem #b7ddff);
+}
+
 #restart {
     display: block;
     margin: auto;

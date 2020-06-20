@@ -85,11 +85,15 @@ function game(e) {
     if (roundResults == 'WIN') {
         playerWins++;
 
+        computerScore.classList.remove('winning');
+        playerScore.classList.add('winning');
         playerScore.classList.add('content');
         playerScore.textContent = 'You: ' + playerWins;
     } else if (roundResults == 'LOSE') {
         computerWins++;
 
+        playerScore.classList.remove('winning');
+        computerScore.classList.add('winning');
         computerScore.classList.add('content');
         computerScore.textContent = 'CPU: ' + computerWins;
     }
@@ -122,9 +126,11 @@ function restart() {
 
     playerScore.classList.add('content');
     playerScore.textContent = 'You: ' + playerWins;
+    playerScore.classList.remove('winning');
 
     computerScore.classList.add('content');
     computerScore.textContent = 'CPU: ' + computerWins;
+    computerScore.classList.remove('winning');
 
     computer.classList.add('spin');
     computer.addEventListener( 'animationend',  function() {
