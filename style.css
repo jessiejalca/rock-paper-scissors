@@ -7,7 +7,7 @@ html {
     background-image: linear-gradient(to bottom right, #581877, #04075e);
 }
 
-header, h2 {
+header {
     text-align: center;
     color: #b7ddff;
     margin: 0;
