@@ -9,6 +9,10 @@ const computerScore = document.querySelector('#cpu-score');
 const btnRestart = document.querySelector('#restart');
 btnRestart.addEventListener('click', restart);
 
+const gameReport = document.querySelector('#game-report');
+const reportTitle = document.querySelector('#report-title');
+const reportScore = document.querySelector('#report-score');
+
 let playerWins = 0;
 let computerWins = 0;
 
@@ -110,11 +114,34 @@ function game(e) {
         } );
     }
 
-    if (playerWins >= 5 || computerWins >= 5) restart();
+    if (playerWins >= 5 || computerWins >= 5) endGame();
 }
 
 function endGame() {
+    gameReport.classList.remove('hide');
     
+    let titleText;
+    let scoreText = `
+        <h2>Final Score</h2>
+        <div>
+            <p>You: ${playerWins}</p>
+            <p>CPU: ${computerWins}</p>
+        </div>
+        `;
+
+    reportScore.innerHTML = scoreText;
+
+    if (playerWins > computerWins) {
+        titleText = 'YOU WIN!';
+    } else {
+        titleText = 'YOU LOSE!';
+    }
+
+    reportTitle.innerHTML = `
+        <h1 id="report-header">${titleText}</h1>
+        <a id="close" href="index.html">Close</a>
+        `;
+
 }
 
 // Resetting the board

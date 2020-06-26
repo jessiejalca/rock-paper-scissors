@@ -118,3 +118,31 @@ img.button {
     color: #b7ddff;
     font-size: 3.2rem;
 }
+
+/* Game Report */
+
+#game-report.hide {
+    display: none;
+}
+
+#game-report {
+    background-color: #000000df;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#report-score li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    margin: 10px;
+    font-size: 2rem;
+    float: left;
+    list-style-type: none;
+}
