@@ -132,17 +132,32 @@ img.button {
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 }
 
-#report-score li {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+#report-header {
+    font-size: 10rem;
+}
+
+#report-score, #final-score {
     text-align: center;
     margin: 10px;
-    font-size: 2rem;
-    float: left;
-    list-style-type: none;
+    font-size: 4rem;
+    color: #a6c7fc;
+}
+
+#points {
+    margin-top: 0;
+}
+
+#report-close {
+    color: #678fb2;
+    font-size: 3rem;
+    text-decoration: none;
+}
+
+#report-close:hover {
+    filter: drop-shadow(0 0 1rem blue);
+    color: #b7ddff;
+    font-size: 3.2rem;
 }

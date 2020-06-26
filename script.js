@@ -121,15 +121,6 @@ function endGame() {
     gameReport.classList.remove('hide');
     
     let titleText;
-    let scoreText = `
-        <h2>Final Score</h2>
-        <div>
-            <p>You: ${playerWins}</p>
-            <p>CPU: ${computerWins}</p>
-        </div>
-        `;
-
-    reportScore.innerHTML = scoreText;
 
     if (playerWins > computerWins) {
         titleText = 'YOU WIN!';
@@ -139,8 +130,15 @@ function endGame() {
 
     reportTitle.innerHTML = `
         <h1 id="report-header">${titleText}</h1>
-        <a id="close" href="index.html">Close</a>
-        `;
+    `;
+
+    let scoreText = `
+        <h2 id="final-score">Final Score</h2>
+        <p id="points">You: ${playerWins}<br>CPU: ${computerWins}</p>
+        <a id="report-close" href="index.html">PLAY AGAIN</a>
+    `;
+
+    reportScore.innerHTML = scoreText;
 
 }
 
